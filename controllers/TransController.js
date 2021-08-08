@@ -18,9 +18,7 @@ exports.getTransaction = catchAsync(async (req, res, next) => {
 });
 
 exports.addTransaction = catchAsync(async (req, res, next) => {
-  console.log(req.body);
   const transaction = await TransModal.create(req.body);
-  console.log({ transaction });
   res.json({ status: "success", data: { transaction } });
 });
 
