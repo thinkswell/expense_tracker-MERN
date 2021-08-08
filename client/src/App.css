@@ -1,0 +1,183 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Roboto Mono", monospace;
+}
+.app {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+}
+.head {
+  font-size: 1.5rem;
+  font-weight: 100;
+}
+.tracker {
+  margin: 5rem auto;
+  padding: 2rem;
+  box-shadow: 0 0 0.8rem #d4d4d4;
+  width: 40rem;
+  border-radius: 0.5rem;
+}
+.tracker > header {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.tracker > * {
+  margin-bottom: 2rem;
+}
+.balance > main {
+  font-size: 2.2rem;
+}
+.gross {
+  width: 100%;
+  display: flex;
+  border-radius: 0.5rem;
+  border: 1px solid #d4d4d4;
+  padding: 1rem;
+}
+.gross > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.gross > div:first-child {
+  border-right: 1px solid #d4d4d4;
+}
+.gross > div > main {
+  font-size: 1.8rem;
+}
+.history > div {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d4d4d4;
+}
+.history > main {
+  width: 100%;
+  padding: 0.3rem;
+}
+.historyCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  padding: 1.5rem 0.5rem;
+  border: 1px solid #d4d4d4;
+  position: relative;
+}
+.historyCard > .amt {
+  font-size: 1.4rem;
+}
+.historyCard:hover .historyCard-btn {
+  display: block;
+}
+.historyCard-btn {
+  cursor: pointer;
+  background: red;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 0.8rem;
+  transform: translate(calc(-100% - 5px), -50%);
+  display: none;
+}
+.add > div {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #d4d4d4;
+}
+.add > form {
+  display: flex;
+  flex-direction: column;
+}
+.add > form > .head {
+  margin-bottom: 0.4rem;
+}
+.add > form > input {
+  padding: 0.5rem 0.8rem;
+  font-size: 1.5rem;
+  font-family: "Courier New", Courier, monospace;
+  margin-bottom: 1rem;
+}
+.btn {
+  cursor: pointer;
+  padding: 1rem;
+  background: #222;
+  color: #fff;
+  border: none;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+.btn:hover {
+  background-color: #444;
+}
+main.red {
+  color: red;
+}
+main.red::before {
+  content: "-";
+}
+main.green {
+  color: #00c200;
+}
+.history > main {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.historyCard.green {
+  border-left: 0.5rem solid #00c200;
+}
+.historyCard.red {
+  border-left: 0.5rem solid red;
+}
+.historyCard.green .amt {
+  color: #00c200;
+}
+.historyCard.green .amt::before {
+  content: "+";
+}
+.historyCard.red .amt {
+  color: red;
+}
+.historyCard.red .amt::before {
+  content: "-";
+}
+.alert {
+  position: fixed;
+  top: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 0.5rem #d4d4d4;
+  padding: 0.8rem 1.4rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  color: red;
+  background: #fff;
+}
+.alert.green {
+  color: #00c200;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d4d4d4;
+}
